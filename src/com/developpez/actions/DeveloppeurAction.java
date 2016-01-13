@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.util.profiling.UtilTimerStack;
 
 public class DeveloppeurAction extends ActionSupport implements SessionAware{
 
-
+	//Définir Session
 	private static final long serialVersionUID = 1L;
 
 	private int identifiant;
