@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+      <struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources" value="package"  />
+
+    <package name="com.developpez.actions"  namespace="/" extends="struts-default">
+    
+    <interceptors>
+    	<interceptor name="allowAccessIntercept" 
+    				 class="com.developpez.interceptor.AllowAccessInterceptor">
+    	</interceptor>
+    </interceptors>
+    
+    
+        <!-- Action de l'action de réference -->   
+        <default-action-ref name="saisir_Developpeur"/> 
+        
+        <action name="saisir_Developpeur">
+        	  <interceptor-ref name="createSession"/>
+        	  <interceptor-ref name="defaultStack"/>
+      		  <interceptor-ref name="allowAccessIntercept"/>
+ 	    	  <result name="allowAccess" >/jsp/authentifier_Developpeur.jsp</result>
+     		  <result name="success" >/jsp/saisir_Developpeur.jsp</result> 
+        </action>
+        
+        <action name="enregistrer_Developpeur" class="com.developpez.actions.DeveloppeurAction" 
+                method="enregistrer">
+            <result name="success" >/jsp/enregistrer_Developpeur.jsp</result>
+            <result name="input">/jsp/saisir_Developpeur.jsp</result>  
+        </action>
+        
+        <action name="lister_Developpeur" class="com.developpez.actions.DeveloppeurAction"
+        		method="lister">
+        		<result name="success">/jsp/lister_Developpeur.jsp</result>
+        </action>
+        
+        <action name="supprimer_Developpeur" class="com.developpez.actions.DeveloppeurAction"
+        		method="supprimerAll">
+        		<result name="success">/jsp/lister_Developpeur.jsp</result>
+        </action>
+        
+        <action name="authetifier_Developpeur" class="com.developpez.actions.AllowAccessAction"
+        		method="authentifier">
+        		<result name="success">/jsp/saisir_Developpeur.jsp</result>	
+        		<result name="input">/jsp/authentifier_Developpeur.jsp</result>
+        </action>	
+        
+        <action name="deconnecter_Developpeur" class="com.developpez.actions.AllowAccessAction"
+        		method="deconnecter">
+        		<result type="redirectAction">authentifier_Developpeur</result>
+        </action>	
+
+		<action name="rechercher_Developpeur" class="com.developpez.actions.DeveloppeurAction"
+				method="rechercher">
+				<result>/jsp/rechercher_Developpeur.jsp</result>
+		</action>
+
+       	<action name="supprimer1_Developpeur" class="com.developpez.actions.DeveloppeurAction"
+				method="supprimer1">
+				<result type="redirectAction">lister_Developpeur</result>
+		</action>
+		
+		       
+    </package>
+</struts>  
