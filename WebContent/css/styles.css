@@ -1,0 +1,70 @@
+* { margin: 2; padding: 2;}
+
+#formulaire 
+{
+	position: relative; 
+	margin-left: 2%;
+	margin-top: 2%;
+	width: 600px;
+	text-align: left; 
+	background:#fefefe;
+	border-style:solid;
+	border-width:2px;
+	border-color:#848484;
+	padding: 14px;
+}
+
+.errorMessage
+{
+	color:#EF0F0F;
+	font-family:tahoma, verdana, arial, sans-serif;
+	font-size:13px;
+}
+
+#msg_erreur
+{
+	text-align:justify;
+	border-style:solid;
+	border-top-width:1px;
+	border-top-color:#D53A3E;
+	border-right-width:1px;
+	border-right-color:#D53A3E;
+	border-bottom-width:1px;
+	border-bottom-color:#D53A3E;
+	border-left-width:1px;
+	border-left-color:#D53A3E;
+	width:600px;
+	list-style-image:url(../images/erreur.png);
+}
+
+#msg_erreur label {
+color:#D53A3E;
+font-family:tahoma,verdana,arial,sans-serif;
+font-size:14px;
+font-weight:bold;
+}
+
+#msg_infos
+{
+	text-align:center;
+	border-style:solid;
+	border-top-width:1px;
+	border-top-color:#190707;
+	border-right-width:1px;
+	border-right-color:#190707;
+	border-bottom-width:1px;
+	border-bottom-color:#190707;
+	border-left-width:1px;
+	border-left-color:#190707;
+	width:600px;
+
+}
+
+#msg_infos ul {
+color:#4B8A08;
+font-family:tahoma,verdana,arial,sans-serif;
+font-size:14px;
+font-weight:bold;
+list-style-image:url(../images/ok.png);
+
+}
