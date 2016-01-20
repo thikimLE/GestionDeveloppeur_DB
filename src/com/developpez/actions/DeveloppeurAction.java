@@ -13,7 +13,7 @@ public class DeveloppeurAction extends ActionSupport implements SessionAware{
 	//Définir Session: modifier par KL 20160120
 	private static final long serialVersionUID = 1L;
 
-	private int identifiant, identification1;
+	private int identifiant;
 	private String pseudo;
 	private String mail;
 	private String codePostal;
