@@ -23,7 +23,7 @@ public class DeveloppeurAction extends ActionSupport implements SessionAware{
 	
 	private Map<String, Object> session ;
 	
-	
+	// Définir les getteurs  et setteurs
 
 	public int getIdentifiant() {
 		return identifiant;
